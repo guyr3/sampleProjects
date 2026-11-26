@@ -1,4 +1,4 @@
-# Sample University Projects
+# Selected Academic Projects | Guy Rosenberg
 
 * `a3-BiLSTM.py`:  implementation of a bidirectional LSTM network for the task of segmenting compound words in German
 
