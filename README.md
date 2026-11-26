@@ -3,6 +3,7 @@
 * `a3-BiLSTM.py`:  implementation of a bidirectional LSTM network for the task of segmenting compound words in German
 
 * `a4-transformer`: training an encoder-decoder transformer model using OpenNMT for the task of phoneme conversion (G2P)
+  * For example: ***language*** would become	***læŋɡwɪd͡ʒ***
   * Only the core files were included, for simplicity
   * `data_processing.py`: preprocessing of the training and test sets, reserving part of the training data for validation
   * `a4-transformer.yaml`: configuration file for OpenNMT
