@@ -1,0 +1,62 @@
+save_data: data/run
+
+src_vocab: data/vocab.src
+tgt_vocab: data/vocab.tgt
+
+overwrite: False
+
+# Paths to the training & validation sets
+data:
+    corpus_1:
+        path_src: data/src-train.txt
+        path_tgt: data/tgt-train.txt
+    valid:
+        path_src: data/src-val.txt
+        path_tgt: data/tgt-val.txt
+
+# Save model checkpoints every 500 steps
+# 10,000 total steps for training
+save_model: data/run/model
+save_checkpoint_steps: 500
+valid_steps: 500
+train_steps: 10000
+
+# I save the logs into a file to then find the best-performing model checkpoint
+log_interval: 500
+log_file: data/training_logs.log
+
+world_size: 1
+gpu_ranks: [0]
+num_workers: 4
+batch_type: "tokens"
+batch_size: 4096
+valid_batch_size: 2048
+
+share_vocab: false
+
+# Optimization
+model_dtype: "fp16"
+optim: "adam"
+learning_rate: 1
+warmup_steps: 2000
+decay_method: "noam"
+adam_beta2: 0.998
+max_grad_norm: 0
+label_smoothing: 0.1
+param_init: 0
+param_init_glorot: true
+normalization: "tokens"
+
+# Model
+encoder_type: transformer
+decoder_type: transformer
+position_encoding: true
+enc_layers: 3
+dec_layers: 3
+heads: 4
+hidden_size: 256
+word_vec_size: 256
+transformer_ff: 1024
+dropout_steps: [0]
+dropout: [0.1]
+attention_dropout: [0.1]
